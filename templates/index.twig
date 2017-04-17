@@ -1,0 +1,56 @@
+{% extends 'partials/layout.twig' %}
+
+{% block main %}
+    <div class="outer main">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 main-tabs">
+                    <ul class="nav nav-tabs nav-justified" role="tablist">
+                        <li class="active" role="presentation">
+                            <a href="#progress" aria-controls="progress" role="tab" data-toggle="tab">
+                                Progress
+                            </a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#about" aria-controls="about" role="tab" data-toggle="tab">
+                                About
+                            </a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#categories" aria-controls="categories" role="tab" data-toggle="tab">
+                                Types
+                            </a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#latest" aria-controls="latest" role="tab" data-toggle="tab">
+                                Latest
+                            </a>
+                        </li>
+                        <li role="presentation" id="map-tab">
+                            <a href="#map" aria-controls="map" role="tab" data-toggle="tab">
+                                Map
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div role="tabpanel" class="panel panel-default tab-pane active" id="progress">
+                            {% include "home/progress.twig" %}
+                        </div>
+                        <div role="tabpanel" class="panel panel-default tab-pane" id="about">
+                            {% include "home/about.twig" %}
+                        </div>
+                        <div role="tabpanel" class="panel panel-default tab-pane" id="categories">
+                            {% include "home/categories.twig" %}
+                        </div>
+                        <div role="tabpanel" class="panel panel-default tab-pane" id="latest">
+                            {% include "home/latest.twig" %}
+                        </div>
+                        <div role="tabpanel" class="panel panel-default tab-pane" id="map">
+                            {% include "home/map.twig" %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

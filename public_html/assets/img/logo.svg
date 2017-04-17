@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" class="logo" viewBox="0 0 280.6644 193.85548" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <defs>
+        <symbol id="wheelchair" class="Web-Application-Icons Medical-Icons Transportation-Icons">
+            <title>Wheelchair</title>
+            <path transform="matrix(.05 0 0 -.05 0 76.8)" d="m1.02e3 349 100-204q-50-179-205-290-152-111-339-111-156 0-288 78-133 77-210 210-78 132-78 288 0 181 104 330 105 149 275 211l17-131q-122-54-195-166-73-111-73-244 0-185 132-316 131-132 316-132 126 0 232 65 107 65 166 175 56 111 46 237zm550-100 60-114-260-128q-13-7-29-7-40 0-57 35l-239 477h-472q-24 0-42.5 16.5-11 17-14 41l-96 779q-2 16 6 42 14 51 57 82.5t97 31.5q66 0 113-47t47-113q0-69-52-118-52-50-120-50l37-289h423v-128h-407l16-128h455q40 0 57-35l228-455z"/>
+        </symbol>
+    </defs>
+    <style>
+		#tickr, #tickl {
+		  transform: scaleY(0);
+		  transform-origin: 50% 50%;
+		}
+
+		#tickr {
+		  transition: all 0.5s 0s;
+		}
+
+		#tickl {
+		  transition: all 0.5s 0.5s;
+		}
+
+		#wc {
+		  transition: transform 0.5s;
+		  transform-origin: 50% 50%;
+		}
+
+		svg:hover #tickr, svg:hover #tickl {
+			transform: scaleY(1);
+		}
+		
+		svg:hover #wc {
+			transform: rotate(-5deg);
+		  }
+		}
+    </style>
+    <g transform="translate(-230 -392)">
+        <g transform="translate(230 392)">
+            <g transform="translate(5.84e-7 2.7)">
+                <path fill="#8db745" d="m280 17.8q0.69 0.69 0.69 1.59 0 0.896-0.69 1.59l-9.72 9.72q-1.93 1.93-4.69 1.93h-92.7q-1.79 0-3.1-1.31t-1.31-3.1v-17.7q0-1.79 1.31-3.1t3.1-1.31h39.7v-4.41q0-1.79 1.31-3.1t3.1-1.31h8.83q1.79 0 3.1 1.31t1.31 3.1v4.41h35.3q2.76 0 4.69 1.93zm-67.4 63.4h17.7v35.3q0 1.79-1.31 3.1t-3.1 1.31h-8.83q-1.79 0-3.1-1.31t-1.31-3.1v-35.3zm57.4-30.9q1.79 0 3.1 1.31t1.31 3.1v17.7q0 1.79-1.31 3.1t-3.1 1.31h-92.7q-2.76 0-4.69-1.93l-9.72-9.72q-0.69-0.69-0.69-1.59 0-0.896 0.69-1.59l9.72-9.72q1.93-1.93 4.69-1.93h35.3v-13.2h17.7v13.2h39.7z"/>
+                <g id="tickr">
+                <path fill="#fff" d="m266 12.9q0 0.658-0.461 1.12l-11.9 11.9-2.24 2.24q-0.461 0.461-1.12 0.461-0.658 0-1.12-0.461l-2.24-2.24-5.96-5.96q-0.461-0.461-0.461-1.12 0-0.658 0.461-1.12l2.24-2.24q0.461-0.461 1.12-0.461 0.658 0 1.12 0.461l4.84 4.85 10.8-10.8q0.461-0.461 1.12-0.461 0.658 0 1.12 0.461l2.24 2.24q0.461 0.461 0.461 1.12z"/>
+                </g>
+                <g id="tickl">
+                <path fill="#fff" d="m199 56.9q0 0.658-0.461 1.12l-11.9 11.9-2.24 2.24q-0.461 0.461-1.12 0.461-0.658 0-1.12-0.461l-2.24-2.24-5.96-5.96q-0.461-0.461-0.461-1.12 0-0.658 0.461-1.12l2.24-2.24q0.461-0.461 1.12-0.461 0.658 0 1.12 0.461l4.84 4.85 10.8-10.8q0.461-0.461 1.12-0.461 0.658 0 1.12 0.461l2.24 2.24q0.461 0.461 0.461 1.12z"/>
+                </g>
+            </g>
+            <g transform="translate(-183 -344)">
+                <g transform="translate(183 347)">
+                    <g transform="translate(-181 -327)" stroke="#8db745" fill="none">
+                        <path stroke-linejoin="round" d="m380 480a96.6 28.4 0 0 1 -59.6 30.2 96.6 28.4 0 0 1 -114 -9.59 96.6 28.4 0 0 1 3.67 -34.9" stroke="#8db745" stroke-linecap="square" stroke-width="12" fill="none"/>
+                    </g>
+                    <g fill="#fff" transform="translate(-181 -331)">
+                        <g id="wc" transform="translate(0,0)">
+                        <use xlink:href="#wheelchair" transform="matrix(1.91 0 0 1.91 222 328)" height="100%" width="100%" y="0" x="0" fill="#ffffff"/>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

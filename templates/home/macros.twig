@@ -1,0 +1,37 @@
+
+{% macro vtp(value, total, vclass, showTotal = true) %}
+    <div class="vtp">
+        <span class="value {{ vclass }}" data-count-up>
+            {{ value }}
+        </span>
+        <span class="percent">
+            {% if total > 0 %}
+                {{ (100 * value / total)|round(1) }}%
+            {% else %}
+                0
+            {% endif %}
+        </span>
+        {% if(showTotal) %}
+            <span class="total">
+                {{ total }}
+            </span>
+        {% endif %}
+    </div>
+{% endmacro %}
+
+{% macro wmy(w, m, y) %}
+    <div class="wmy">
+        <div class="week">
+            Week:
+            <span class="{% if w > 0 %}up{% endif %}{% if w < 0 %}down{% endif %}">{{ w ?? 0 }}</span>
+        </div>
+        <div class="month">
+            Month:
+            <span class="{% if m > 0 %}up{% endif %}{% if m < 0 %}down{% endif %}">{{ m ?? 0 }}</span>
+        </div>
+        <div class="year">
+            Year:
+            <span class="{% if y > 0 %}up{% endif %}{% if y < 0 %}down{% endif %}">{{ y ?? 0 }}</span>
+        </div>
+    </div>
+{% endmacro %}

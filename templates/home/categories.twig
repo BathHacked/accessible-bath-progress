@@ -1,0 +1,46 @@
+
+<h2 class="pane-title">Location Types</h2>
+
+{% from "home/macros.twig" import vtp as vtp  %}
+{% from "home/macros.twig" import wmy as wmy  %}
+
+<div class="progress-container">
+    <div class="progress-container-inner">
+        {% for name,cat in stats.category %}
+            <div class="category">
+                <h2 class="category-title">{{ name }}</h2>
+                <div class="row">
+                    <div class="major col-md-4">
+                        <div class="box">
+                            <h3>Locations with known accessibility</h3>
+                            {{ vtp(cat.known, cat.all) }}
+                            {{ wmy(cat.wheelchair.yes.week,cat.wheelchair.yes.month, cat.wheelchair.yes.year) }}
+                        </div>
+                    </div>
+                    <div class="minor chart-container col-md-4">
+                        <div class="box">
+                            <h3>Wheelchair accessibility</h3>
+                            <canvas class="chart"
+                                    data-chart
+                                    data-values="{{ cat.wheelchair.yes.known }},{{ cat.wheelchair.limited.known }},{{ cat.wheelchair.no.known }},"
+                                    data-labels="Yes,Limited,No"
+                                    data-colors="#8db745,#ef9333,#c6322a"
+                            ></canvas>
+                        </div>
+                    </div>
+                    <div class="minor chart-container col-md-4">
+                        <div class="box">
+                            <h3>Toilet accessibility</h3>
+                            <canvas class="chart"
+                                    data-chart
+                                    data-values="{{ cat.wheelchair_toilet.yes.known }},{{ cat.wheelchair_toilet.no.known }},"
+                                    data-labels="Yes,No"
+                                    data-colors="#8db745,#c6322a"
+                            ></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>

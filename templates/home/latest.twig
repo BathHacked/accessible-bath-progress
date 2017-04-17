@@ -1,0 +1,48 @@
+<h2 class="pane-title">Latest Updated Locations</h2>
+
+<div class="progress-container">
+    <div class="progress-container-inner">
+        <div class="row">
+            {% for node in stats.latest %}
+                <div class="minor col-md-4 col-sm-6">
+                    <div class="box latest">
+                        <h3>{{ node.name }}</h3>
+                        <div class="info">
+                            {% if node.housenumber is not empty or node.street is not empty%}
+                            <div class="address">
+                                {{ node.housenumber }}
+                                {{ node.street }}
+                            </div>
+                            {% endif %}
+                            <div class="date">Updated: {{ node.timestamp|date('D F jS Y') }}</div>
+                            <div class="category">Type: {{ node.category_name }}</div>
+
+                            {% if node.wheelchair == 'yes' %}
+                                <div class="wheelchair wm-green">Wheelchair accessible</div>
+                            {% elseif node.wheelchair == 'limited' %}
+                                <div class="wheelchair wm-amber">Limited wheelchair access</div>
+                            {% elseif node.wheelchair == 'no' %}
+                                <div class="wheelchair wm-red">No wheelchair access</div>
+                            {% elseif node.wheelchair == 'unknown' %}
+                                <div class="wheelchair wm-grey">Unknown wheelchair access</div>
+                            {% endif %}
+
+                            {% if node.wheelchair_toilet == 'yes' %}
+                                <div class="toilet wm-green">Toilet accessible</div>
+                            {% elseif node.wheelchair_toilet == 'no' %}
+                                <div class="toilet wm-red">No toilet access</div>
+                            {% elseif node.wheelchair_toilet == 'unknown' %}
+                                <div class="toilet wm-grey">Unknown toilet access</div>
+                            {% endif %}
+
+                        </div>
+
+                        <a href="https://wheelmap.org/nodes/{{ node.id }}" class="btn btn-default btn-sm" target="_blank">
+                            View on Wheelmap
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

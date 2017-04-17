@@ -1,0 +1,33 @@
+{
+  "name": "bathhacked/accessible-bath-progress",
+  "description": "An app to monitor Accessible Bath updates",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Mark Owen"
+    },
+    {
+      "name": "Thomas Fletcher"
+    }
+  ],
+  "require": {
+    "php": ">=5.5.0",
+    "slim/slim": "^3.1",
+    "slim/php-view": "^2.0",
+    "monolog/monolog": "^1.17",
+    "slim/twig-view": "2.2.0",
+    "j4mie/idiorm": "v1.5.2",
+    "guzzlehttp/guzzle": "~6.0",
+    "jdorn/file-system-cache": "dev-master",
+    "nesbot/carbon": "1.22.1"
+  },
+  "scripts": {
+    "start": "php -S 0.0.0.0:8080 -t public_html public_html/index.php"
+  },
+  "autoload": {
+    "psr-4": {
+      "BathHacked\\": "src/BathHacked/",
+      "Wheelmap\\": "src/Wheelmap"
+    }
+  }
+}

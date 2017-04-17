@@ -1,0 +1,90 @@
+
+<h2 class="pane-title">Progress</h2>
+
+{% from "home/macros.twig" import vtp as vtp  %}
+{% from "home/macros.twig" import wmy as wmy  %}
+
+<div class="progress-container">
+    <div class="progress-container-inner">
+        <div class="row">
+            <div class="major col-md-4">
+                <div class="box">
+                    <h3>Total locations with information</h3>
+                    {{ vtp(stats.total.known, stats.total.all, '', true) }}
+                    {{ wmy(stats.total.week,stats.total.month, stats.total.year) }}
+                </div>
+            </div>
+            <div class="major chart-container col-md-4">
+                <div class="box">
+                    <h3>Wheelchair accessible</h3>
+                    <canvas class="chart"
+                            data-chart
+                            data-values="{{ stats.wheelchair.yes.known }},{{ stats.wheelchair.limited.known }},{{ stats.wheelchair.no.known }},"
+                            data-labels="Yes,Limited,No"
+                            data-colors="#8db745,#ef9333,#c6322a"
+                    ></canvas>
+                </div>
+            </div>
+            <div class="major chart-container col-md-4">
+                <div class="box">
+                    <h3>Toilet accessibile</h3>
+                    <canvas class="chart"
+                            data-chart
+                            data-values="{{ stats.wheelchair_toilet.yes.known }},{{ stats.wheelchair_toilet.no.known }},"
+                            data-labels="Yes,No"
+                            data-colors="#8db745,#c6322a"
+                    ></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="minor col-md-4">
+                <div class="box">
+                    <h3>Wheelchair accessible</h3>
+                    {{ vtp(stats.wheelchair.yes.known, stats.total.all, 'wm-green') }}
+                    {{ wmy(stats.wheelchair.yes.week,stats.wheelchair.yes.month, stats.wheelchair.yes.year) }}
+                </div>
+            </div>
+            <div class="minor col-md-4">
+                <div class="box">
+                    <h3>Limited wheelchair access</h3>
+                    {{ vtp(stats.wheelchair.limited.known, stats.total.all, 'wm-amber') }}
+                    {{ wmy(stats.wheelchair.limited.week,stats.wheelchair.limited.month, stats.wheelchair.limited.year) }}
+                </div>
+            </div>
+            <div class="minor col-md-4">
+                <div class="box">
+                    <h3>Not wheelchair accessible</h3>
+                    {{ vtp(stats.wheelchair.no.known, stats.total.all, 'wm-red') }}
+                    {{ wmy(stats.wheelchair.no.week,stats.wheelchair.no.month, stats.wheelchair.no.year) }}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="minor col-md-4">
+                <div class="box">
+                    <h3>Toilet wheelchair accessible</h3>
+                    {{ vtp(stats.wheelchair_toilet.yes.known, stats.total.all, 'wm-green') }}
+                    {{ wmy(stats.wheelchair_toilet.yes.week,stats.wheelchair_toilet.yes.month, stats.wheelchair_toilet.yes.year) }}
+                </div>
+            </div>
+            <div class="minor col-md-4">
+                <div class="box">
+                    <h3>Toilet not wheelchair accessible</h3>
+                    {{ vtp(stats.wheelchair_toilet.no.known, stats.total.all, 'wm-red') }}
+                    {{ wmy(stats.wheelchair_toilet.no.week,stats.wheelchair_toilet.no.month, stats.wheelchair_toilet.no.year) }}
+                </div>
+            </div>
+            <div class="minor col-md-4">
+                <div class="box">
+                    <h3>No wheelchair information yet</h3>
+                    {{ vtp(stats.wheelchair.unknown.all, stats.total.all, 'wm-grey sm') }}
+                    <a href="https://wheelmap.org/en/map#/?lat=51.382281056660254&amp;lon=-2.370600700378418&amp;zoom=14"
+                       target="_blank">
+                        Help us by tagging locations you know about
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
